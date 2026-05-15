@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/00. Study/02. Sprite Renderer.meta
 guid: 67864a190d4379f439c6629cdbcf5802
+========
+guid: 19469c14928c3a348b00cbd8c1359147
+>>>>>>>> ee0d994e661ad1b0e28bbcb49c702f93525b94b6:Assets/00. Study/01. Simple Transform.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

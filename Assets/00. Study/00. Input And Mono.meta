@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/00. Study/00. Input And Mono.meta
 guid: 1c46453db99482f4bb64d2431bc75732
+========
+guid: 7e55c4b77deb2fc43b320c9368f088c2
+>>>>>>>> ee0d994e661ad1b0e28bbcb49c702f93525b94b6:Assets/00. Study.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
