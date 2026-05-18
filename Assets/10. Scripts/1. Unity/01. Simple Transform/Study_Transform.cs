@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Study.Transform
+namespace Study_Transform
 {
     public class Study_Transform : MonoBehaviour
     {
