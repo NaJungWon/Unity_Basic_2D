@@ -1,22 +1,28 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 namespace Shichuan
 {
     public class Shichuan_CardSelector : MonoBehaviour
     {
-        public Card[,] cards = new Card[5, 4]; //전체 카드
-        public Card[] selectCards = new Card[2]; //선택된 카드
+        public enum Direction
+        {
+            Up, Down, Left, Right
+        }
 
-        public int count = 0; //고른카드 카운트
+        public Card[,] cards; //전체 카드
+
+        private Card selectCardA;
+        private Card selectCardB;
+
+        //이번 프레임에 카드 선택이 완료되었는지 체크하는 bool 변수
+        public bool wasSelectionCompleted = false;
+
         public Transform cursor;
+
         public int currentIndexX = 0;
         public int currentIndexY = 0;
-
-        private int selectCardIndex1X = 0;
-        private int selectCardIndex1Y = 0;
-        private int selectCardIndex2X = 0;
-        private int selectCardIndex2Y = 0;
 
         public void Start()
         {
@@ -25,156 +31,201 @@ namespace Shichuan
 
         private void Update()
         {
-            if(Keyboard.current.leftArrowKey.wasPressedThisFrame)
+            wasSelectionCompleted = false;
+
+            if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
             {
-                MoveXCursor(true);
+                MoveCursor(Direction.Left);
             }
             else if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
             {
-                MoveXCursor(false);
+                MoveCursor(Direction.Right);
             }
-            else if( Keyboard.current.upArrowKey.wasPressedThisFrame)
+            else if (Keyboard.current.upArrowKey.wasPressedThisFrame)
             {
-                MoveYCursor(true);
+                MoveCursor(Direction.Up);
             }
             else if (Keyboard.current.downArrowKey.wasPressedThisFrame)
             {
-                MoveYCursor(false);
+                MoveCursor(Direction.Down);
             }
 
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 SelectCard();
             }
+
+            if (Keyboard.current.pKey.wasPressedThisFrame)
+            {
+                Debug.Log($"A : {selectCardA}, B : {selectCardB}");
+            }
+            if (Keyboard.current.oKey.wasPressedThisFrame)
+            {
+                Debug.Log($"A : {selectCardA}, B : {selectCardB}");
+            }
         }
 
-        public void CursorPosition()
+        public void SetBoard(Card[ , ] cardArray)
+        {
+            cards = cardArray;
+        }
+
+        public Card[] GetSelectedCards()
+        {
+            return new[] { selectCardA, selectCardB };
+        }
+
+        public void Clear()
+        {
+            selectCardA = null;
+            selectCardB = null;
+        }
+
+        private void MoveCursor(Direction direction)
+        {
+            switch (direction)
+            {
+                case Direction.Up:
+                    MoveYCursor(false);
+                    break;
+                case Direction.Down:
+                    MoveYCursor(true);
+                    break;
+                case Direction.Left:
+                    MoveXCursor(true);
+                    break;
+                case Direction.Right:
+                    MoveXCursor(false);
+                    break;
+            }
+        }
+
+        private void MoveXCursor(bool isLeft)
+        {
+            int temp = currentIndexX;
+
+            for(int i = 0; i < cards.GetLength(0); i++)
+            {
+                temp += isLeft ? +1 : -1;
+
+                if (temp < 0) temp = cards.GetLength(0) - 1;
+                if (temp >= cards.GetLength(0)) temp = 0;
+                
+                if (cards[temp, currentIndexY] == null)
+                {
+                    bool needYmove = HasIndexCheck(true); //y좌표 전멸시 다음 y좌표로 이동용
+                    if(needYmove)
+                    {
+                        currentIndexY++;
+
+                        if (currentIndexY < 0) currentIndexY = cards.GetLength(1) - 1;
+                        if (currentIndexY >= cards.GetLength(1)) currentIndexY = 0;
+                        if (cards[temp, currentIndexY] == null)
+                        {
+                            continue;
+                        }
+                    }
+                    currentIndexX++;
+                    continue;
+                }
+                else
+                {
+                    currentIndexX = temp;
+                    CursorPosition();
+                    break;
+                }
+            }
+        }
+        private void MoveYCursor(bool isUp)
+        {
+            int temp = currentIndexY;
+            for (int i = 0; i < cards.GetLength(1); i++)
+            {
+                temp += isUp ? +1 : -1;
+
+                if (temp < 0) temp = cards.GetLength(1) - 1;
+                if (temp >= cards.GetLength(1)) temp = 0;
+                
+
+                if (cards[currentIndexX, temp] == null)
+                {
+                    bool needXmove = HasIndexCheck(false); //y좌표 전멸시 다음 y좌표로 이동용
+                    if(needXmove)
+                    {
+                        currentIndexX++;
+
+                        if (currentIndexX < 0) currentIndexX = cards.GetLength(0) - 1;
+                        if (currentIndexX >= cards.GetLength(0)) currentIndexX = 0;
+                        if (cards[currentIndexX, temp] == null)
+                        {
+                            continue;
+                        }
+                    }
+                    currentIndexY++;
+                    continue;
+                }
+                else
+                {
+                    currentIndexY = temp;
+                    CursorPosition();
+                    break;
+                }
+            }
+        }
+        private void CursorPosition()
         {
             float cardX = cards[currentIndexX, currentIndexY].transform.position.x;
             float cardY = cards[currentIndexX, currentIndexY].transform.position.y;
             cursor.position = new Vector3(cardX, cardY);
         }
 
-        private void MoveXCursor(bool isLeft)
+        private bool HasIndexCheck(bool isXMove) // 행,열 둘 중 하나가 삭제되어 이동 불가할 때 다른줄 이동용
         {
-            //int yValue = HasIndexCheck(true); //y좌표 전멸시 다음 y좌표로 이동용
-            while (true)
+            //int nullCount = 0;
+            bool needCursorMove = false;
+
+            if (isXMove) // 들어온 temp값이 x좌표 값일때
             {
-                currentIndexX += isLeft ? +1 : -1;
-                if (currentIndexX < 0) currentIndexX = cards.GetLength(0) - 1;
-                if (currentIndexX >= cards.GetLength(0)) currentIndexX = 0;
-
-                if (cards[currentIndexX, currentIndexY] == null)
+                int nullCount = 0;
+                for (int row = 0; row < cards.GetLength(0); row++)
                 {
-                    continue;
+                    if (cards[row, currentIndexY] == null) nullCount++;
                 }
-                else
-                {
-                    break;
-                }
+                if (nullCount == cards.GetLength(0) - 1) needCursorMove = true;
             }
-
-            CursorPosition();
-        }
-        private void MoveYCursor(bool isUp)
-        {
-            //int xValue = HasIndexCheck(false); //x좌표 전멸시 다음 x좌표 이동용
-            while (true)
+            else // 들어온 temp값이 y좌표 값일때
             {
-                currentIndexY += isUp ? -1 : +1;
-                if (currentIndexY < 0) currentIndexY = cards.GetLength(1) - 1;
-                if (currentIndexY >= cards.GetLength(1)) currentIndexY = 0;
-
-                if (cards[currentIndexX, currentIndexY] == null)
+                int nullCount = 0;
+                for (int col = 0; col < cards.GetLength(1); col++)
                 {
-                    continue;
+                    if (cards[currentIndexX, col] == null) nullCount++;
                 }
-                else
-                {
-                    break;
-                }
+                if (nullCount == cards.GetLength(1) - 1) needCursorMove = true;
             }
-
-            CursorPosition();
-        }
-        public int HasIndexCheck(bool checkX) // 한줄 전체 삭제시 다른줄 이동용
-        {
-            int count = 0;
-
-            if(checkX)
-            {
-                for (int i = 0; i < cards.GetLength(0); i++)
-                {
-                    if (cards[i,currentIndexY] != null)
-                    {
-                        count += 0;
-                    }
-                }
-            }
-
-            if(!checkX)
-            {
-                for (int i = 0; i < cards.GetLength(1); i++)
-                {
-                    if (cards[currentIndexX, i] != null)
-                    {
-                        count += 0;
-                    }
-                }
-            }
-
-            if (count > 0) return 0;
-            else return 1;
+            
+            return needCursorMove;
         }
 
         private void SelectCard()
         {
-            cards[currentIndexX, currentIndexY].Flip();
+            Card currentCard = cards[currentIndexX, currentIndexY];
 
-            if(count < 2)
+            if (selectCardA == null)
             {
-                SaveSelectCardInfo(currentIndexX, currentIndexY);
+                selectCardA = currentCard;
             }
-
-            if(count == 2)
+            //같은 카드를 선택되지 않게 합시다.
+            else if (selectCardA == currentCard)
             {
-                if (selectCards[0].myNumber == selectCards[1].myNumber)
-                {
-                    DeleteCard(selectCards[0], selectCards[1]);
-                }
-                else
-                {
-                    selectCards[0].Flip();
-                    selectCards[1].Flip();
-                }
-                count = 0;
-            }
-        }
-
-        private void SaveSelectCardInfo(int x, int y)
-        { 
-            if(count == 0)
-            {
-                selectCardIndex1X = x;
-                selectCardIndex1Y = y;
+                return;
             }
             else
             {
-                selectCardIndex2X = x;
-                selectCardIndex2Y = y;
+                selectCardB = currentCard;
+                wasSelectionCompleted = true;
             }
-            selectCards[count] = cards[currentIndexX, currentIndexY];
-            count++;
-        }
 
-        private void DeleteCard(Card a, Card b)
-        {
-            Destroy(a.gameObject); // a 컴포넌트가 부착된 게임오브젝트를 삭제합니다
-            Destroy(b.gameObject); // b 컴포넌트가 부착된 게임오브젝트를 삭제합니다
-            selectCards[0] = null;
-            selectCards[1] = null;
-            cards[selectCardIndex1X, selectCardIndex1Y] = null;
-            cards[selectCardIndex2X, selectCardIndex2Y] = null;
+            cards[currentIndexX, currentIndexY].Flip();
         }
     }
 }

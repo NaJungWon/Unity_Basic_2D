@@ -8,10 +8,16 @@ namespace Shichuan
     public class Sichuan_GameManager : MonoBehaviour
     {
         public Shichuan_CardSelector cardSelector;
+
         public GameObject cardPrefab; //카드 프리팹
-        public GameObject[,] cards = new GameObject[5, 4];
+        public Card[,] board = new Card[5, 4]; //2차원 게임보드
+        public GameObject ClearObject;
+
         public float cardSpacingX = 0.5f; //x좌표 카드 간격
         public float cardSpacingY = 0.7f; //y좌표 카드 간격
+
+        private int pairMatchingCount = 0; //페어매칭이 성공한 순간에 +2 되는 변수
+
 
         int count = 0;
         int number = 0;
@@ -19,74 +25,68 @@ namespace Shichuan
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Awake()
         {
-            //cardSelector = GetComponent<Shichuan_CardSelector>();
             SpawnCard();
             ShuffleCard();
-            for (int i = 0; i < cards.GetLength(1); i++)
-            {
-                for(int j = 0; j < cards.GetLength(0);j++)
-                {
-                    cardSelector.cards[j, i] = cards[j, i].GetComponent<Card>();
-                }
-            }
-            
+            cardSelector.SetBoard(board);
+            ClearObject.SetActive(false);
         }
 
         void SpawnCard()
         {
-            float centerX = (cards.GetLength(0) - 1) * 0.5f;
-            float centerY = (cards.GetLength(1) - 1) * 0.5f;
+            float centerX = (board.GetLength(0) - 1) * 0.5f;
+            float centerY = (board.GetLength(1) - 1) * 0.5f;
 
-            for (int i = 0; i < cards.GetLength(1); i++)
+            for (int col = 0; col < board.GetLength(1); col++)
             {
-                for(int j = 0; j < cards.GetLength(0); j++)
+                for(int row = 0; row < board.GetLength(0); row++)
                 {
-                    float offsetX = (centerX - j) * cardSpacingX;
-                    float offsetY = (centerY - i) * cardSpacingY;
+                    float offsetX = (centerX - row) * cardSpacingX;
+                    float offsetY = (centerY - col) * cardSpacingY;
 
                     Vector3 cardPosition = gameObject.transform.position + new Vector3(offsetX, offsetY, 0);
                     GameObject card = Instantiate(cardPrefab, cardPosition, Quaternion.identity);
-                    Card cardInfo = card.gameObject.GetComponent<Card>();
-                    ChangeCardInfo(cardInfo);
+                    Card cardInfo = card.GetComponent<Card>();
+                    InputCardNumber(cardInfo);
+                    cardInfo.Flip(); //테스트용
                     card.transform.parent = gameObject.transform;
-                    cards[j, i] = card;
-                    //Debug.Log($"{cards}배열 {j}, {i}좌표에 {card}오브젝트 삽입");
+                    board[row, col] = cardInfo;
                 }
             }
         }
 
         void ShuffleCard()
         {
-            for (int i = cards.GetLength(1) - 1; 1 <= i; i--)
+            for (int col = board.GetLength(1) - 1; 1 <= col; col--)
             {
-                for (int j = cards.GetLength(0) - 1; 1 <= j; j--)
+                for (int row = board.GetLength(0) - 1; 1 <= row; row--)
                 {
-                    int randomX = Random.Range(0, j);
-                    int randomY = Random.Range(0, i);
+                    int randomX = Random.Range(0, row);
+                    int randomY = Random.Range(0, col);
 
-                    GameObject temp = cards[j, i];
-                    cards[j, i] = cards[randomX, randomY];
-                    cards[randomX, randomY] = temp;
+                    Card temp = board[row, col];
+                    board[row, col] = board[randomX, randomY];
+                    board[randomX, randomY] = temp;
                 }
             }
-            float centerX = (cards.GetLength(0) - 1) * 0.5f;
-            float centerY = (cards.GetLength(1) - 1) * 0.5f;
 
-            for (int i = 0; i < cards.GetLength(1); i++)
+            float centerX = (board.GetLength(0) - 1) * 0.5f;
+            float centerY = (board.GetLength(1) - 1) * 0.5f;
+
+            for (int col = 0; col < board.GetLength(1); col++)
             {
-                for (int j = 0; j < cards.GetLength(0); j++)
+                for (int row = 0; row < board.GetLength(0); row++)
                 {
-                    float offsetX = (centerX - j) * cardSpacingX;
-                    float offsetY = (centerY - i) * cardSpacingY;
+                    float offsetX = (centerX - row) * cardSpacingX;
+                    float offsetY = (centerY - col) * cardSpacingY;
 
                     Vector3 cardPosition = transform.position + new Vector3(offsetX, offsetY, 0);
 
-                    cards[j, i].transform.position = cardPosition;
+                    board[row, col].gameObject.transform.position = cardPosition;
                 }
             }
         }
 
-        void ChangeCardInfo(Card cardInfo)
+        void InputCardNumber(Card cardInfo)
         {
             if (count == 2)
             {
@@ -95,6 +95,66 @@ namespace Shichuan
             }
             count++;
             cardInfo.InputNumber(number);
+        }
+
+        private void LateUpdate()
+        {
+            if (cardSelector.wasSelectionCompleted)
+            {
+                Card[] selectedCard = cardSelector.GetSelectedCards();
+                CheckPairMatching(selectedCard[0], selectedCard[1]);
+            }
+        }
+
+        private void CheckPairMatching(Card a, Card b)
+        {
+            //같으면 지우고
+            if (a.myNumber == b.myNumber)
+            {
+                DeleteCard(a);
+                DeleteCard(b);
+
+                pairMatchingCount += 2; //같으면 페어매칭카운트를 증가시킴
+                CheckEnd();
+                //Debug.Log("두 카드가 같습니다");
+            }
+            else //다르면 뒤집어라
+            {
+                a.Flip();
+                b.Flip();
+
+                Debug.Log("두 카드가 다릅니다");
+            }
+
+            cardSelector.Clear();
+        }
+
+        // 객체를 안전하게 삭제하는 기능을 넣어봅시다.
+        private void DeleteCard(Card target)
+        {
+            // 선형 탐색을 이용해서 target의 위치를 찾습니다.
+            for(int col = 0; col<board.GetLength(1); col++)
+            {
+                for (int row = 0; row < board.GetLength(0); row++)
+                {
+                    if (board[row,col] == null) continue;
+                    // Equals(매개변수) 함수는 "==" 같다고 생각해주세요 
+                    if (board[row,col].Equals(target))
+                    {
+                        board[row,col] = null;      //먼저 배열에서 비워준 후
+                        Destroy(target.gameObject); //Scene에서 삭제합니다.
+                    }
+                }
+            }
+        }
+
+        // 게임이 끝났는지 여부를 검사하는 함수를 만들어봅시다
+        private void CheckEnd()
+        {
+            if (pairMatchingCount >= board.Length)
+            {
+                ClearObject.SetActive(true);
+            }
         }
     }
 }

@@ -283,8 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Study.ParMatchingGame.CardSelector
   cursor: {fileID: 1456924352}
-  currentIndex: 2
   cursorYOffset: -0.5
+  currentIndex: 2
   wasSelectionCompleted: 0
 --- !u!1 &286661908
 GameObject:
@@ -1608,6 +1608,7 @@ MonoBehaviour:
   - {fileID: 2097457037}
   - {fileID: 1302762816}
   - {fileID: 789968357}
+  ClearObject: {fileID: 1215724586}
 --- !u!4 &1161137498
 Transform:
   m_ObjectHideFlags: 0
