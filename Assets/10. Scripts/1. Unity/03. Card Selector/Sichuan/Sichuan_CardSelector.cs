@@ -181,12 +181,12 @@ namespace Shichuan
 
         private bool HasIndexCheck(bool isXMove) // 행,열 둘 중 하나가 삭제되어 이동 불가할 때 다른줄 이동용
         {
-            //int nullCount = 0;
+            int nullCount = 0;
             bool needCursorMove = false;
 
             if (isXMove) // 들어온 temp값이 x좌표 값일때
             {
-                int nullCount = 0;
+                nullCount = 0;
                 for (int row = 0; row < cards.GetLength(0); row++)
                 {
                     if (cards[row, currentIndexY] == null) nullCount++;
@@ -195,7 +195,7 @@ namespace Shichuan
             }
             else // 들어온 temp값이 y좌표 값일때
             {
-                int nullCount = 0;
+                nullCount = 0;
                 for (int col = 0; col < cards.GetLength(1); col++)
                 {
                     if (cards[currentIndexX, col] == null) nullCount++;
