@@ -11,7 +11,7 @@ namespace Study.LayerAndScroll
         public enum ScrollDirection { Left, Right, Up, Down}
 
         [Header("Scroll Settings")]
-        public float speed = 1.0f;
+        public float speed = 1.0f; //이동 속도
         public ScrollDirection direction = ScrollDirection.Left;
 
         [Header("Resources")]
@@ -27,10 +27,13 @@ namespace Study.LayerAndScroll
 
         private void Start()
         {
-            if(isObstacle) enableLayerList.Add(startLayer);
+            if (isObstacle)
+            {
+                enableLayerList.Add(startLayer);
+            }
             else
             {
-
+                enableLayerList.Add(startLayer);
             }
 
         }
@@ -61,7 +64,6 @@ namespace Study.LayerAndScroll
 
         private void MoveLayerList()
         {
-            
             // (speed * Time.deltaTime) = 초당 speed의 속도로 뭔가를 하겠다는 표현
             Vector3 dir = GetMoveDirection(direction);
             Vector3 moveVector = dir * (speed * Time.deltaTime);
@@ -111,19 +113,40 @@ namespace Study.LayerAndScroll
 
         private void CheckInstantiateLayer()
         {
-            // 3. Layer를 생성해줍니다. 현재 필요한 LayerObject 2~3개입니다.
-            // GameObject.Instantiate(GameObject object) || .Instantiate(GameObject object)
-            // 런타임 중에 매개변수로 들어온 object의 사본을 생성합니다.
-
-            // .Instantiate() : 실행중(런타임)에 게임오브젝트를 생성하는 함수 입니다.
-            //                  생성한 객체는 생성할 객체의 타입으로 반환받을 수 있습니다.
-            while (enableLayerList.Count <= 2)
+            while (enableLayerList.Count < 3)
             {
-                GameObject instance = Instantiate(layerPrefabs[0], // layerPrefabs[0]개체의 사본을 전달합니다.
-                spawnPivot.transform.position, spawnPivot.rotation);
-                // spawnPivot의 위치, spawnPivot의 회전값이라는 말.
-                enableLayerList.Add(instance);
+                if(isObstacle)
+                {
+                    MakeRandomObstacle();
+                }
+                else
+                {
+                    GameObject instance = Instantiate(layerPrefabs[0], // layerPrefabs[0]개체의 사본을 전달합니다.
+                    spawnPivot.position, spawnPivot.rotation);
+                    // spawnPivot의 위치, spawnPivot의 회전값이라는 말.
+                    enableLayerList.Add(instance);
+                }
             }
+        }
+
+        public void MakeRandomObstacle()
+        {
+            int randomNum = Random.Range(0, layerPrefabs.Length); //랜덤 객체
+            int randomYPos = Random.Range(-5, 5);                 //랜덤 좌표 생성
+            float randomScale = Random.Range((float)-0.5, (float)1.0); //랜덤 크기
+
+            Vector3 spawnPoint = spawnPivot.transform.position;
+            spawnPoint.y += randomYPos;
+
+            GameObject instance = Instantiate(layerPrefabs[randomNum], spawnPoint, spawnPivot.rotation);
+            Vector3 ObstacleScale = instance.transform.localScale;
+            {
+                ObstacleScale.x += randomScale;
+                ObstacleScale.y += randomScale;
+                ObstacleScale.z += randomScale;
+            }
+            instance.transform.localScale = ObstacleScale;
+            enableLayerList.Add(instance);
         }
     }
 }

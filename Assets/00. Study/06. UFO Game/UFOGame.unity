@@ -148,7 +148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 887079239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &238090876 stripped
 GameObject:
@@ -595,6 +595,8 @@ Transform:
   - {fileID: 1156790363}
   - {fileID: 1991224694}
   - {fileID: 1450085540}
+  - {fileID: 1213613368}
+  - {fileID: 72237850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &887079240
@@ -609,13 +611,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9196233cdab5db843b64f3bdf4fda92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Study.LayerAndScroll.ScrollController
-  speed: 1
-  direction: 3
+  speed: 5
+  direction: 0
   layerPrefabs:
   - {fileID: 7937971097712341773, guid: 1055c796fdc3ac54486eab66d2cde821, type: 3}
+  - {fileID: 6888899876838122065, guid: 266d6b89be68f53469d54d5bfb92f912, type: 3}
+  - {fileID: 4343985718491838035, guid: 51de32f6ec30692498b2a37624e3c3b4, type: 3}
+  - {fileID: 4029019982457283430, guid: beb55f6edf72f8446876759e595de9a5, type: 3}
+  - {fileID: 783314333119660230, guid: 3c45c666629cb2849addd08eaa408f3c, type: 3}
   startLayer: {fileID: 1346845193}
-  endPivot: {fileID: 72237850}
-  spawnPivot: {fileID: 1213613368}
+  endPivot: {fileID: 1756469083}
+  spawnPivot: {fileID: 2121602240}
   isObstacle: 1
 --- !u!1 &942992205
 GameObject:
@@ -812,7 +818,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 887079239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1221373557 stripped
 Transform:
@@ -1088,6 +1094,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1002860109}
   - {fileID: 887079239}
-  - {fileID: 1213613368}
-  - {fileID: 72237850}
   - {fileID: 942992207}
