@@ -113,10 +113,11 @@ namespace Shichuan
                 
                 if (cards[temp, currentIndexY] == null)
                 {
-                    bool needYmove = HasIndexCheck(true); //y좌표 전멸시 다음 y좌표로 이동용
+                    bool needYmove = HasIndexCheck(true); //x좌표 전멸시 다음 x좌표로 이동용
                     if(needYmove)
                     {
                         currentIndexY++;
+                        currentIndexX++;
 
                         if (currentIndexY < 0) currentIndexY = cards.GetLength(1) - 1;
                         if (currentIndexY >= cards.GetLength(1)) currentIndexY = 0;
@@ -125,8 +126,11 @@ namespace Shichuan
                             continue;
                         }
                     }
-                    currentIndexX++;
-                    continue;
+                    else
+                    {
+                        currentIndexX++;
+                        continue;
+                    }
                 }
                 else
                 {
@@ -153,6 +157,7 @@ namespace Shichuan
                     if(needXmove)
                     {
                         currentIndexX++;
+                        currentIndexY++;
 
                         if (currentIndexX < 0) currentIndexX = cards.GetLength(0) - 1;
                         if (currentIndexX >= cards.GetLength(0)) currentIndexX = 0;
@@ -161,8 +166,11 @@ namespace Shichuan
                             continue;
                         }
                     }
-                    currentIndexY++;
-                    continue;
+                    else
+                    {
+                        currentIndexY++;
+                        continue;
+                    }
                 }
                 else
                 {
