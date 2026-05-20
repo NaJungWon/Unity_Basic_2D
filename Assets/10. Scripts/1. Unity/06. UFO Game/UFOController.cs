@@ -6,13 +6,27 @@ public class UFOController : MonoBehaviour
 {
     // 위,아래 움직임 기능 넣어보기
     // 기본적으로 하강을 하지만 스페이스를 눌렀을때는 상승
+    public GameObject finishText;
 
     public float Speed = 1.0f;
     public int CoinCount = 0;
 
+    bool isFinish = false;
+
+    void Start()
+    {
+        finishText.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (CoinCount > 20)
+        {
+            isFinish = true;
+            finishText.SetActive(true);
+        }
+
         //기본적으로 하강
         Vector3 moveVector = new Vector3(0, -1, 0);
 

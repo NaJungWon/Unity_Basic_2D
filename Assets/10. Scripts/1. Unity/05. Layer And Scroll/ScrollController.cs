@@ -23,33 +23,17 @@ namespace Study.LayerAndScroll
 
         private List<GameObject> enableLayerList = new List<GameObject>();
 
-        public GameObject finishText;
-        public GameObject player;
-        int coinCount = 0;
-        bool isFinish = false;
 
         private void Start()
         {
-            finishText.SetActive(false);
             enableLayerList.Add(startLayer);
         }
 
         private void Update()
         {
-            coinCount = player.GetComponent<UFOController>().CoinCount;
-            if (coinCount > 20)
-            {
-                isFinish = true;
-                finishText.SetActive(true);
-            }
-
-            if(isFinish == false)
-            {
-                MoveLayerList();
-                CheckDestroyAbleLayer();
-                //CheckInstantiateLayer();
-                CheckLayer();
-            }
+            MoveLayerList();
+            CheckDestroyAbleLayer();
+            CheckLayer();
         }
 
         private Vector3 GetMoveDirection(ScrollDirection dir)
@@ -118,20 +102,6 @@ namespace Study.LayerAndScroll
             {
                 enableLayerList.RemoveAt(0);
                 Destroy(headLayer);
-            }
-        }
-
-        private void CheckInstantiateLayer()
-        {
-            // 3. Layer를 생성해줍니다. 현재 필요한 LayerObject 2 ~ 3개입니다
-
-            //  GameObject.Instantiate(GameObject object) || .Instantiate(GameObject object)
-            // 실행중(런타임)에 매개변수로 들어온 object의 사본을 생성합니다.
-            // 생성한 객체는 생성할 객체의 타입으로 반환받을 수 있습니다                  
-            while (enableLayerList.Count < 2)
-            {
-                GameObject layer = SpawnRandomLayer();
-                enableLayerList.Add(layer);
             }
         }
 
