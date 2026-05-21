@@ -1185,7 +1185,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3405789202156950262, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
+    - {fileID: 2080147095831615256, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
+    - {fileID: 7178592450863993721, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
+    - {fileID: 3899802448442907025, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
+    - {fileID: 2954170193332777231, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
+    - {fileID: 8411093038165517564, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
+    - {fileID: 371724290721888164, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
+    - {fileID: 7055280956039986563, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
+    - {fileID: 2607810314236121469, guid: 5e446eafda08dfd4f80b128e77623bd5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
