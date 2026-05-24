@@ -1081,6 +1081,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2214572695381862341, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
+      propertyPath: m_TagString
+      value: Move_Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 2490098934025556754, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1165,6 +1169,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7169904830203404025, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
+      propertyPath: m_TagString
+      value: Move_Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1189,7 +1197,6 @@ GameObject:
   - component: {fileID: 1619047593}
   - component: {fileID: 1619047592}
   - component: {fileID: 1619047594}
-  - component: {fileID: 1619047595}
   - component: {fileID: 1619047597}
   - component: {fileID: 1619047596}
   m_Layer: 0
@@ -1296,27 +1303,15 @@ MonoBehaviour:
   speed: 8
   gravity: -15
   jumpPower: 6.5
-  jumpCount: 0
   maxJumpCount: 2
+  groundCheckDistance: 0.25
+  skinWidth: 0.02
+  moveGroundVector: {x: 0, y: 0, z: 0}
   collisionLayer:
     serializedVersion: 2
     m_Bits: 64
-  skinWidth: 0.02
-  groundCheckDistance: 0.25
   showCastGizmos: 1
   castPreviewDistance: 0.5
---- !u!114 &1619047595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619047591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c2677133e99b04cbd28297217e91ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Study.PrimitiveAndVector.Study_Vector
 --- !u!70 &1619047596
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1405,6 +1400,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2214572695381862341, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
+      propertyPath: m_TagString
+      value: Move_Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 2490098934025556754, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1415,11 +1414,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490098934025556754, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 2490098934025556754, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.41
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2490098934025556754, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1489,6 +1488,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7169904830203404025, guid: 00a96b53a57b9134ea716b30fcbb0686, type: 3}
+      propertyPath: m_TagString
+      value: Move_Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1519,9 +1522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8440ec11dd2282a48ba26fc91d434f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Study.PrimitiveAndVector.Study_Lerp
-  isRun: 0
+  isRun: 1
   speed: 1
-  goalPosition: {x: 0, y: 0, z: 0}
+  goalPosition: {x: 4, y: 0, z: 0}
   goalTime: 2
 --- !u!1 &2089935951
 GameObject:

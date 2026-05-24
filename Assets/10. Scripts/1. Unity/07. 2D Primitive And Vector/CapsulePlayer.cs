@@ -37,6 +37,13 @@ namespace Study.PrimitiveAndVector
         public float groundCheckDistance = 0.5f;  // 바닥 검사 길이. 짧으면 짧을수록 디테일해짐
         public float skinWidth = 0.02f; // 캐릭터의 주위에 박스를 만들기위해 보정 용도 사용하는 변수
 
+        [Header("이동발판 설정")]
+        //public Vector3 playerOriginVector;
+        public Vector3 currentPos; //현재좌표
+        public Vector3 PreviousPos; //이전 좌표
+        public Vector3 moveGroundValue; //이동값
+        public bool isUp = false; //플레이어가 올라와있는지 확인
+
         // 물리에도, 스크롤에서 사용하던것처럼 특정 계층만 모여있는 Layer 개념이 있습니다
         // 이번에 사용하는 Layer개념은 지형만 모아놓은 Ground Layer입니다.
         public LayerMask collisionLayer;
@@ -97,7 +104,6 @@ namespace Study.PrimitiveAndVector
 
             ApplyGravaity();
             ApplyJump();
-
             // 이번 프레임에 움직이고 싶은 이동량
             Vector3 desireMove =
                 new Vector3(horizontal * speed, verticalVelocity) * Time.fixedDeltaTime;
@@ -112,8 +118,14 @@ namespace Study.PrimitiveAndVector
             // 이게 결국 어딘가에 수직 움직임이 막혔다는 이야기임
             if (moveVector.y != desireMove.y) verticalVelocity = 0.0f;
 
+            Vector3 playerPosition = transform.position;
+            if (isUp)
+            {
+                playerPosition = transform.position + moveGroundValue;
+            }
+            
             // 마지막에 rigidbody에게 해당 위치로 이동하라고 명령 합니다
-            rBody.MovePosition(transform.position + moveVector);
+            rBody.MovePosition(playerPosition + moveVector);
         }
 
         private void SetSunGlassState(State state)
@@ -220,7 +232,43 @@ namespace Study.PrimitiveAndVector
             RaycastHit2D hit = Physics2D.BoxCast(
                 box.center, box.size, 0.0f, Vector2.down, groundCheckDistance, collisionLayer);
             bool result = (hit.collider != null);
+
+            CheckMoveGrounded(hit);
             return result;
+        }
+
+        private void CheckMoveGrounded(RaycastHit2D hit) //이동발판 이동값 계산 함수
+        {
+            if (hit.collider != null)
+            {
+                Vector3 hitVector = hit.collider.gameObject.transform.position;
+
+                //Debug.Log("발판있음");
+
+                if (hit.collider.gameObject.CompareTag("Move_Obstacle") && isUp == false)
+                {
+                    currentPos = hitVector;
+                    isUp = true;
+                }
+
+                if (isUp)
+                {
+                    if (currentPos != hitVector)
+                    {
+                        PreviousPos = currentPos;
+                        currentPos = hitVector;
+                        moveGroundValue = currentPos - PreviousPos;
+                    }
+                }
+            }
+            else if (hit.collider == null)
+            {
+                //Debug.Log("발판없음");
+                currentPos = Vector3.zero;
+                PreviousPos = Vector3.zero;
+                moveGroundValue = Vector3.zero;
+                isUp = false;
+            }
         }
         
         #region ResolveAxisMovement 시각화 코드
