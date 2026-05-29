@@ -78,6 +78,8 @@ namespace Study.MergeGame
             // 상위 볼 생성
             AnimalBall spawnedBall = Instantiate(upgradeBall, centerPosition, Quaternion.identity);
             spawnedBall.Drop();
+
+            AddScore(upgradeLevel);
         }
 
         // 게임오버가 되면 활성화 될 개체들과
@@ -98,6 +100,32 @@ namespace Study.MergeGame
             {
                 disableObjects[i].SetActive(false);
             }
+        }
+
+        public TMP_Text text;
+        private Dictionary<int, int> scoreTable = new Dictionary<int, int>();
+        private int score = 0;
+
+        private void Start()
+        {
+            scoreTable.Add(1, 10);
+            scoreTable.Add(2, 20);
+            scoreTable.Add(3, 40);
+            scoreTable.Add(4, 80);
+            scoreTable.Add(5, 160);
+            scoreTable.Add(6, 320);
+            scoreTable.Add(7, 640);
+            scoreTable.Add(8, 1280);
+            scoreTable.Add(9, 2560);
+            text.SetText($"{score}");
+        }
+
+        // 새로 생성될 개체의 level을 기준으로 득점처리를 진행합니다
+        // Level1 : 10, Level2 : 20
+        public void AddScore(int upgradeLevel)
+        {
+            score += scoreTable[upgradeLevel];
+            text.SetText($"{score}");
         }
     }
 }
