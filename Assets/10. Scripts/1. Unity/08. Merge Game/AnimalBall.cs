@@ -5,13 +5,12 @@ namespace Study.MergeGame
     public class AnimalBall : MonoBehaviour
     {
         public int level = 1;
-        //public bool hasFirstContact = false;
 
-        // C#의 프로퍼티를 이용해서 외부에서는 조회 가능하지만
+        // C#의 프로퍼티를 이용해서 외부에서는 조회가능하지만
         // 변경에 대한 책임은 나만(private) 가질 수 있는
-        // 안전한 변수(사실은 필드)를 만들어줍니다
+        // 안전한 변수(사실은 필드)를 만들어 줍니다
         public bool HasFirstContact { get; private set; } = false;
-        public bool isMerged { get; set; } = false;
+        public bool IsMerged { get; set; } = false;
 
         private Rigidbody2D rBody;
         private Collider2D col;
@@ -43,28 +42,30 @@ namespace Study.MergeGame
         // rigidbody를 통해서 감지 할 수 있습니다
 
         // OnCollisionEnter2D
-        // : Trigger가 아닌 Collider와 충돌 했을때 호출되는 이벤트 함수입니다.
+        // : Trigger가 아닌 Collider와 물리적 충돌 했을때 호출되는 이벤트 함수입니다
 
         // OnCollisionStay2D
-        // : 물리적 충돌이 유지되고 있을때 호출되는 이벤트 함수입니다
+        // : 물리적 충돌이 유지되고 있을때 호출되는 이벤트 함수 입니다
 
         // OnCollisionExit2D
-        // : 물리적 충돌이 종료 되었을때 호출되는 이벤트 함수입니다
+        // : 물리적 충돌이 종료 되었을때 호출되는 이벤트 함수 입니다
+
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
             HasFirstContact = true;
+            OnTriggerEnter2D(collision.collider);
 
-            //두 볼이 병합되는 과정은
+            // 두 볼이 병합되는 과정은
             // 1. 접촉이 일어난다
             // 2. 두 개체가 사라진다
-            // 3. 상우개체가 그 중앙에 생긴다
+            // 3. 상위개체가 그 중앙에 생긴다
 
             // 두 개체가 접촉해서 병합요청이 두번 호출 될 수 있으므로,
             // 한쪽에 bool변수를 넣어서 중복호출 되지 않도록 해줍니다
-            if (isMerged) return;
+            if (IsMerged) return;
 
-            // 충돌 정보에서 나와 충돌한 gameObject에서 AnimalBall 컴포넌트를
+            // 충돌 정보에서 나와 충돌한 gameObejct에서 AnibalBall 컴포넌트를
             // 가져와 봅니다
             AnimalBall contactBall = collision.gameObject.GetComponent<AnimalBall>();
 
@@ -79,10 +80,13 @@ namespace Study.MergeGame
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(HasFirstContact && collision.CompareTag("Finish"))
+            if (HasFirstContact == false) return;
+
+            if (collision.CompareTag("Finish"))
             {
                 MergeGameManager.Instance.GameOver();
             }
         }
     }
 }
+
