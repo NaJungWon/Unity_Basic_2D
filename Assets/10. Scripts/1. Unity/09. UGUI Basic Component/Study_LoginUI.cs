@@ -17,6 +17,9 @@ namespace Study_LoginUI
         [field: SerializeField]
         private Button LoginButton { get; set; }
 
+        [field: SerializeField]
+        private Toggle AutoLoginButton { get; set; }
+
         private Selectable[] selectables;
         private int index = 0;
 
@@ -27,6 +30,8 @@ namespace Study_LoginUI
             selectables = new Selectable[] { EmailField, PasswordField, LoginButton };
             index = -1;
             CreateUser();
+
+            AutoLoginButton.isOn = false;
         }
 
         private void Update()
@@ -39,23 +44,75 @@ namespace Study_LoginUI
             }
         }
 
+        string inputEmail;
+        string inputPassword;
+
         public void OnEndEditEmail(string email)
         {
             index = 0;
             Debug.Log($"입력한 이메일 : {email}");
+            inputEmail = email;
         }
 
         public void OnEndEditPassword(string password)
         {
             index = 1;
             Debug.Log($"입력한 이메일 : {password}");
+            inputPassword = password;
         }
 
         public void OnClickLoginButton()
         {
             index = 2;
-            Debug.Log($"로그인 버튼 클릭!");
+            
+            if(string.IsNullOrEmpty(inputEmail) || string.IsNullOrEmpty(inputPassword))
+            {
+                Debug.Log($"이메일과 비밀번호를 입력해 주세요");
+                return;
+            }
+
+            string domain = inputEmail.Split('@')[1];
+
+            if (domains.Contains(domain) == false)
+            {
+
+            }
+
+            if(TryGetUser(inputEmail, out User user) == false)
+            {
+                Debug.Log($"{inputEmail}은 존재하지 않는 ID입니다.");
+                return;
+            }
+
+            if(user.Password.Equals(inputPassword) == false)
+            {
+                Debug.Log($"비밀번호가 일치하지 않습니다.");
+            }
+
+            // 밑에서부터는 다 맞는 로직
+
+            Debug.Log($"로그인에 성공했습니다. ID = {inputEmail}, PW = {inputPassword}");
         }
+
+        private bool TryGetUser(string email, out User user)
+        {
+            user = null;
+
+            for(int i = 0; i<userDB.Count; ++i)
+            {
+                // .Equals(매개변수)
+                // 객체가 매개변수와 동일한지 비교합니다.
+                // 동일하다면 true, 그렇지 않다면 false를 반환합니다.
+                // 값타입일 경우는 값비교를, 참조타입이면 주소 비교를 합니다
+                if (userDB[i].ID.Equals(email))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private HashSet<string> domains = new HashSet<string>();
 
         private void CreateUser()
         {
@@ -82,6 +139,22 @@ namespace Study_LoginUI
             userDB.Add(new User("mountain_climber@kakao.com", "M0unt@1nC!"));
             userDB.Add(new User("city_lights@gmail.com", "C1tyL1ghts$"));
             userDB.Add(new User("fast_runner@naver.com", "F@stRunn3r"));
+
+            for(int i = 0; i < userDB.Count; i++)
+            {
+                string userEmail = userDB[i].ID;
+                string domain = userEmail.Split('@')[1];
+                // "fast_runner@naver.com"을 '@'가지고 Split을 하게되면
+                // {"fast_runner", "naver.com"}으로 분할되게 됩니다
+                // 2개의 배열로 분할되기 때문에 인덱스 1번 요소를 domain에 대입해 줍니다
+                domains.Add(domain);
+                // HashSet에 다 담아보면 모든 유저의 도메인들 종류가 하나씩 담긴 그릇이 됩니다
+            }
+        }
+
+        public void OnClickAutoLogin(bool isOn)
+        {
+            Debug.Log($"OnClickAutoLoginToggle = {isOn}");
         }
     }
 
