@@ -708,6 +708,7 @@ MonoBehaviour:
   <EmailField>k__BackingField: {fileID: 1689628429}
   <PasswordField>k__BackingField: {fileID: 536241371}
   <LoginButton>k__BackingField: {fileID: 290595372}
+  <AutoLoginButton>k__BackingField: {fileID: 232319571}
 --- !u!1 &536241369
 GameObject:
   m_ObjectHideFlags: 0
