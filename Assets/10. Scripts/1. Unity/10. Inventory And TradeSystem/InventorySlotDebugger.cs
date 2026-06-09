@@ -16,7 +16,7 @@ namespace Study_Inventory
 
         private void Update()
         {
-            if (SimpleInput.GetKeyDown(Key.Digit1))
+            if(SimpleInput.GetKeyDown(Key.Digit1))
             {
                 Slot.SetItem(TestItem);
             }
@@ -29,3 +29,4 @@ namespace Study_Inventory
     }
 
 }
+
