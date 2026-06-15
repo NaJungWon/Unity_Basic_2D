@@ -53,6 +53,9 @@ namespace Study_ActionPlatformer
         private SpriteRenderer SpriteRenderer { get; set; }
         private CharacterController2D Controller2D { get; set; }
 
+        // 바라보는 방향. +1 = 오른쪽, -1 = 왼쪽으로 처리함
+        public int FacingDirection { get; private set; } = 1;
+
         // 각 상태를 제어하기 위한 멤버 변수들
         private Dictionary<int, PlayerAnimStateBase> StateDic { get; set; } = new();
         private PlayerAnimStateBase defaultState; // 예외처리를 위한 기본 상태
@@ -66,14 +69,23 @@ namespace Study_ActionPlatformer
 
             defaultState = new MovementState(this);
 
+            // 여기는 본래 외부에서 주입받아야함
             StateDic.Add(Animator.StringToHash(ANIM_TAG_MOVEMENT), defaultState);
             StateDic.Add(Animator.StringToHash(ANIM_TAG_ATTACK), new AttackState(this));
             StateDic.Add(Animator.StringToHash(ANIM_TAG_ATTACK_END), new AttackEndState(this));
+            StateDic.Add(Animator.StringToHash(ANIM_TAG_JUMP), new JumpState(this));
+            //StateDic.Add(Animator.StringToHash(ANIM_TAG_FIRE), new FireState(this));
+
 
         }
         private void Update()
         {
             UpdateAnimState();
+
+            // 판정에 의한 애니메이션 재생용도라서
+            // Update()에서 호출함
+            UpdateJumInput();
+            UpdateGroundedAnimation();
         }
 
         private void UpdateAnimState()
@@ -115,8 +127,18 @@ namespace Study_ActionPlatformer
             float absMovement = Mathf.Abs(inputVector.x);
             Animator.SetFloat(MOVEMENT, absMovement);
 
-            Controller2D.SetMoveInput(inputVector.x);
+            if(absMovement > 0) // 이동량이 있을때
+            {
+                //삼항 연산자로 정면을 설정해준다
+                FacingDirection = (inputVector.x < 0) ? -1 : 1;
 
+                // x스케일을 반전해서 좌우를 뒤집는다.
+                // (히트박스를 뒤집기 위해서 스케일 반전을 사용)
+                Animator.transform.localScale = new Vector3(FacingDirection, 1, 1);
+            }
+
+            Controller2D.SetMoveInput(inputVector.x);
+            
             if(SimpleInput.GetKeyDown(Key.Z))
             {
                 Animator.SetBool(IS_ATTACK, true);
@@ -130,6 +152,42 @@ namespace Study_ActionPlatformer
         public void StopMovement()
         {
             Controller2D.SetMoveInput(0.0f);
+        }
+
+        // 점프는 AnyState로 동작하기 때문에 상태머신에서 입력처리를 합니다.
+        // 상태 객체에게 호출을 위임해도 무방합니다.
+        public void UpdateJumInput()
+        {
+            if (SimpleInput.GetKeyDown(Key.Space))
+            {
+                // 점프가 가능한 상태인지는 CharacterController가 판단함.
+                Controller2D.RequestJump();
+                Animator.SetTrigger(JUMP);
+            }
+        }
+
+        private bool prevIsGrounded = false;
+        /// <summary>
+        /// CharacterController2D의 접지 상태를 애니메이터로 옮겨주는 함수
+        /// </summary>
+        private void UpdateGroundedAnimation()
+        {
+            bool isGrounded = Controller2D.IsGrounded;
+            Animator.SetBool(IS_GROUNDED, isGrounded);
+
+            // 이전 프레임에서는 접지(바닥에 닿아있는) 상태엿다가
+            // 현재 프레임에서는 접지 하지 않는 상태가 되었을 때
+            if(prevIsGrounded && (isGrounded == false))
+            {
+                // VerticalVelocity가 0보다 크면 => 상승
+                if (Controller2D.VerticalVelocity > 0.0f)
+                    Animator.SetTrigger(JUMP);
+                // 아니면 하강
+                else
+                    Animator.SetTrigger(DESCENDING);
+            }
+
+            prevIsGrounded = isGrounded;
         }
     }
 }
