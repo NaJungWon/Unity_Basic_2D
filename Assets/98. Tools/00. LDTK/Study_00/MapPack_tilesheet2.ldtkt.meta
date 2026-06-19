@@ -1,0 +1,3076 @@
+fileFormatVersion: 2
+guid: 03352c9e6d3ee0e458b24532b6c813ec
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: MapPack_tilesheet2_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 704
+      width: 64
+      height: 64
+    spriteID: e4824d3e637a4ec4580fbeda4756f7ae
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 704
+      width: 64
+      height: 64
+    spriteID: ba29477655eacf545865cfc69dcb1be7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 704
+      width: 64
+      height: 64
+    spriteID: e1caa52a65357734980443d1c7c82d94
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 32036fd369934f744a355ac0d6179136
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 34c3b21ced5fc554083c5e61499072a9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 0a88247e486c04d469c316e0d5b049e4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 67662d071b635ee45a56641c3a8d9830
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 7d586fd0f2b586b4392cfbc83fa38d10
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 105ecbcc320049b4e9e75ddbd3a1ce11
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 704
+      width: 64
+      height: 64
+    spriteID: d84a15847ab992048870407028556abd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 000222d1bf8f7164bac0e0913004e6af
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 6f22dc2fe966d794e893a4fafc80d91d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 488205e2bbecaf041a6f11485ce0ccd0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 704
+      width: 64
+      height: 64
+    spriteID: b12de1e39d19a1d418ada0445d742cee
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 704
+      width: 64
+      height: 64
+    spriteID: a5d4eecc3f1da6d4fbdde9b4e1866713
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 704
+      width: 64
+      height: 64
+    spriteID: 689f37227bfb93c45bacbd3484fb4204
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 704
+      width: 64
+      height: 64
+    spriteID: efb43294759106341903744bb17de617
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 4084d4bb34b6efe4a8341908fe24cf14
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 5877770f22714d44783c67ed8e5dd339
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 6d8b485b7bb1e50449665afc1d3558ba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 954d9c1993144114f8c4cac0619a348a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 6de78f3dab3fef74fa16a80ec6699e9f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 4321756b9fc518243b173f8c23c00ab0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 640
+      width: 64
+      height: 64
+    spriteID: fe4bc647d98037b4c9aa4ca6d781681c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 03da93bf2c15b7f40be476b4dd89fc61
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 323008fc42711b74caa96ef64bf5c024
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 640
+      width: 64
+      height: 64
+    spriteID: d26a802fcd936d542bd65c8b787fafc7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 9fe102bacdfd7c348b3ac7b6548b36c1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 640
+      width: 64
+      height: 64
+    spriteID: 045db097abb3696479e724e75401feeb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 640
+      width: 64
+      height: 64
+    spriteID: fce5ad2500098994e8ef261bf9a6c24a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 640
+      width: 64
+      height: 64
+    spriteID: e121967df87355f43b5fc3def620b916
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 640
+      width: 64
+      height: 64
+    spriteID: dc85cf02b2a215d4683a42a8a6df7f15
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 640
+      width: 64
+      height: 64
+    spriteID: c974c986ce76dca4d84652cac90e33fe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 640
+      width: 64
+      height: 64
+    spriteID: a6a03820117807f4db7e36b824a6c836
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 576
+      width: 64
+      height: 64
+    spriteID: f62ec7320ca854b4a96ac2976bdd399a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 576
+      width: 64
+      height: 64
+    spriteID: ae4cb0f821d8fff4687257050cace7c3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 576
+      width: 64
+      height: 64
+    spriteID: ae3f24919714da447acf4f401d4bae78
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 576
+      width: 64
+      height: 64
+    spriteID: f96b4a71a83032f488d37bbae2c29120
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 576
+      width: 64
+      height: 64
+    spriteID: b164bc7961e53b54b8ef2bee3f4a5ab2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 576
+      width: 64
+      height: 64
+    spriteID: 7f1619502cd4e974bb0f79a54277bafe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 576
+      width: 64
+      height: 64
+    spriteID: 54e15f1778a000649a7cae557712abce
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 576
+      width: 64
+      height: 64
+    spriteID: 90e8336b67c1b0e41b094d08c4a86810
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 576
+      width: 64
+      height: 64
+    spriteID: 31e5c365989a1d849bd2432afa757828
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 576
+      width: 64
+      height: 64
+    spriteID: 5e2bdb6b554540440b2c7389983045f4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 576
+      width: 64
+      height: 64
+    spriteID: a3bd2b04ce8ca8244b241e327a03d168
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 576
+      width: 64
+      height: 64
+    spriteID: cab32fd3ae7edb64a9c58e9fe3b66b6c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 576
+      width: 64
+      height: 64
+    spriteID: fb05e5ab3c6e1f64697bda2b01636188
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 576
+      width: 64
+      height: 64
+    spriteID: 867a45af0346c1a4f8ca9d0dff394de8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 576
+      width: 64
+      height: 64
+    spriteID: 9aba5c1bc4f5dc342aba03c0fae38c90
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 576
+      width: 64
+      height: 64
+    spriteID: b28debb8b9ac1ce4ea6e001964c588ee
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_50
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 576
+      width: 64
+      height: 64
+    spriteID: 54f82b8bcfe41494aae5840c0d289ef1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_51
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 33a39f82681e5f6439c4bfe767f880af
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_52
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 512
+      width: 64
+      height: 64
+    spriteID: a25001a629599984c9ab91894e06f173
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_53
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 9a2eda7c08d3be248bb7f801603dae45
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_54
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 512
+      width: 64
+      height: 64
+    spriteID: d138103dcc0c94f47bc1703e7b5a0cd5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_55
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 9dbc8704605eb9a45b88aae89ac7a5f2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_56
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 7cb2da24d43fa6744bc57b7d35f2ccb8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 0e87b30b285335d46a529c443723b107
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 80096388c2ddb3f4dab240856664a60b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 512
+      width: 64
+      height: 64
+    spriteID: bc1347a11d767f848b76387821c66d3a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 512
+      width: 64
+      height: 64
+    spriteID: b022443c3952c2e40b4120403880ac5d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 1140f155af193dd4faebbd72d5991b58
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_62
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 80d1260cd5817bb4e954fe17975f0d8f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_63
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 512
+      width: 64
+      height: 64
+    spriteID: e52e316a3d62f7a47beb54ffc3e8a1aa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_64
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 35a0b2c049bfa6940a19dee72e7ff9e0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_65
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 9f58d11c9a3f13f429e592b395de7ca0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_66
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 9608c3bef67ab3f44939bb52ed55785e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_67
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 512
+      width: 64
+      height: 64
+    spriteID: 9315a81f3014da94c83b32580fc7d184
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_68
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 448
+      width: 64
+      height: 64
+    spriteID: e4acb730219a77441a5f5c33c104eb3c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_69
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 20413f37f0ccaf94db6456b7c26b6a14
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_70
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 657c71032ecab5c469481bfdda30c55d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_71
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 3981294a9df0cb44a8da0c7c92a5047e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_72
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 448
+      width: 64
+      height: 64
+    spriteID: b01cd4cdc776d1f44af3a31b2dfc6782
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_73
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 097584e82275da04da0b15d48464b6a9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_74
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 7c397f0de64751644acdb660e1d8d613
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_75
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 58a1c08cbf4c9704fa126e72863ac7ef
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_76
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 6a31393df243fa244a09046945323900
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_77
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 448
+      width: 64
+      height: 64
+    spriteID: fe9b7d12e74953d49989219eff14efbb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_78
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 3d55aa9fc2bf4914284d545a7d250c0e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_79
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 448
+      width: 64
+      height: 64
+    spriteID: b2f109eb9310336409c39acfa2e28cd3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_80
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 448
+      width: 64
+      height: 64
+    spriteID: a6ce10db2c48c7f4ea2fbf1a4fd443cc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_81
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 7516e6019678a1840b6d130e32919db8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_82
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 448
+      width: 64
+      height: 64
+    spriteID: 8fa8a999e04472c4da7a4861e7a7cff5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_83
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 448
+      width: 64
+      height: 64
+    spriteID: a62f0fe1f12b0514b84fdba07abed58c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_84
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 448
+      width: 64
+      height: 64
+    spriteID: aeaf65444da3e474ea7a45765cb0bc1d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_85
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 384
+      width: 64
+      height: 64
+    spriteID: 6ad4327c40a81364ca41536f3f055146
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_86
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 384
+      width: 64
+      height: 64
+    spriteID: 3ba68f014031ba84da09e8632591a878
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_87
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 384
+      width: 64
+      height: 64
+    spriteID: ea437f122d4894b44bc1f7eb1ba0763c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_88
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 384
+      width: 64
+      height: 64
+    spriteID: d0b3b3046c0552e45af881d1bda2b469
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_89
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 384
+      width: 64
+      height: 64
+    spriteID: 6cfb215153609f7498aaa13a44c45438
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_90
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 384
+      width: 64
+      height: 64
+    spriteID: 8aa86edba4be1344db43b992993ab5d2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_91
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 384
+      width: 64
+      height: 64
+    spriteID: 29c6ae7c675708f4d910566d675e1bfa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_92
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 384
+      width: 64
+      height: 64
+    spriteID: 96ed5d6f3eb0b304b921555df3772258
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_93
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 384
+      width: 64
+      height: 64
+    spriteID: ba664382666cc7e458a6521ae24c0f09
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_94
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 384
+      width: 64
+      height: 64
+    spriteID: dd6badc7a3f5fe34e92e7d9ca719ecd2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_95
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 384
+      width: 64
+      height: 64
+    spriteID: a8ac791fee4fa7f409b7be346918a4a3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_96
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 384
+      width: 64
+      height: 64
+    spriteID: ea2c1727a7383914d85456553334a81d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_97
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 384
+      width: 64
+      height: 64
+    spriteID: a5c82f9a2537b4c42942617d4865265d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_98
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 384
+      width: 64
+      height: 64
+    spriteID: 56935f387deed7a43877394d807c6df7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_99
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 384
+      width: 64
+      height: 64
+    spriteID: c7e4e351b0af56e48ad7b0fdd2256376
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_100
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 384
+      width: 64
+      height: 64
+    spriteID: ea608863446022a40ad0f3415534377c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_101
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 384
+      width: 64
+      height: 64
+    spriteID: a0953cbeac9f058458c0a9155ae67737
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_102
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 36bb869bb300f674e8085603d0de5a13
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_103
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 03b86460dd8501d44b0d1b73e437795b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_104
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 5d74bba3c6745e94fb6badc929e0f221
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_105
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 4fd8a52474e6a1240a4347332f81c963
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_106
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 89c8c2703c338404e91756bcd009c414
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_107
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 93c7eac92c4bbb84a834cb6ff2785260
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_108
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 58d4dbca50d42b341936098159d660c5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_109
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 1a5b19197859f9346bba5b9356e9cdfe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_110
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 8942b6a2b8f5a9445b52dd91ee7ede85
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_111
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 37d70d5f8956ccf4b81817102e12a421
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_112
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 2b37ab495ea8d9f4199c67653567e04d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_113
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 320
+      width: 64
+      height: 64
+    spriteID: e3f011d1a1b2f144982d5ccd5559dc22
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_114
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 320
+      width: 64
+      height: 64
+    spriteID: a085cc83e6308af44925c3ddd502da4e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_115
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 320
+      width: 64
+      height: 64
+    spriteID: e13b2d67be12652479c0e0c4fdced41a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_116
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 320
+      width: 64
+      height: 64
+    spriteID: ba3c496fde2a0404c99dea0ae0138441
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_117
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 320
+      width: 64
+      height: 64
+    spriteID: 11391132ad51f1a4392d1d13f1a07696
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_118
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 320
+      width: 64
+      height: 64
+    spriteID: ac5604fa5a4664c44a72fa4148722a43
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_119
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 921f1a25eed7c35418985268431bd3e0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_120
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 635146b8d4ca11b40baea142eaaab5c8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_121
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 7e500ad31beb4904ebae05dc791b59e7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_122
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 8b4fa52912c98f949a9db47c034272c5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_123
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 9721d94ff602d5f4c8cb909c10b18aba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_124
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 256
+      width: 64
+      height: 64
+    spriteID: aae405b8dfd797f46a48f87eefef6b8d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_125
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 770569f2976af514da8e6db71f7abee4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_126
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 58002e11505404d46ab2f4a58d594b29
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_127
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 1749c43a29a75cb4b89d3f95af600b76
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_128
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 001d007eae655294990e2749f1e2f280
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_129
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 30424426dfe9a9e42a9c0c499c8d44bc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_130
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 256
+      width: 64
+      height: 64
+    spriteID: ccca964575016c14583e20f5047553ec
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_131
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 256
+      width: 64
+      height: 64
+    spriteID: e7cf8f78883d1d940afe8f1388dcfb8a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_132
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 256
+      width: 64
+      height: 64
+    spriteID: 9d018a64b71de0047926d455bef310d0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_133
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 256
+      width: 64
+      height: 64
+    spriteID: d6d4a4392fa168142b50e359b2636d1b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_134
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 256
+      width: 64
+      height: 64
+    spriteID: c9d04ba9324ddae48b8d0bf08cd71bcb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_135
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 256
+      width: 64
+      height: 64
+    spriteID: dd3f291f26d91114c8f610c201617d83
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_136
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 192
+      width: 64
+      height: 64
+    spriteID: d270216f8eb203d4cb819b7deb03176f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_137
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 192
+      width: 64
+      height: 64
+    spriteID: e3a6d9b5ceb86c44ab6b04a6761890eb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_138
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 192
+      width: 64
+      height: 64
+    spriteID: e3e7cea6861a57e42b13a0e1fd92741f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_139
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 192
+      width: 64
+      height: 64
+    spriteID: fd34809b22694ec418f5a7ef5a797500
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_140
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 192
+      width: 64
+      height: 64
+    spriteID: cafb9c9adc4f7bd45ae9a80da79d2f92
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_141
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 192
+      width: 64
+      height: 64
+    spriteID: 2222c3097cb08b54d9252d0f46741fd5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_142
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 192
+      width: 64
+      height: 64
+    spriteID: 41617437b962d8f49aca15308398cec6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_143
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 192
+      width: 64
+      height: 64
+    spriteID: 7946d935027de474d99db01974605ad3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_144
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 192
+      width: 64
+      height: 64
+    spriteID: c8acb4f892418ff459b3cad4674e0653
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_145
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 192
+      width: 64
+      height: 64
+    spriteID: 29dd905b56b3019448fd643f869f2f52
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_146
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 192
+      width: 64
+      height: 64
+    spriteID: ad82794445d974e4b9a526454917f3c5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_147
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 192
+      width: 64
+      height: 64
+    spriteID: 959cd1d4c0ec2ad4cb364a66574bfb32
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_148
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 192
+      width: 64
+      height: 64
+    spriteID: 8fa7af84b1d390342835da36b5c7bc83
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_149
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 192
+      width: 64
+      height: 64
+    spriteID: 4eef7f21b89d7d645853f20c0670be39
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_150
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 192
+      width: 64
+      height: 64
+    spriteID: 7a2d12d060893b74f884c5f62765d6fe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_151
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 192
+      width: 64
+      height: 64
+    spriteID: ed0c77ff86e91a64d9b65920a54e503f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_152
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 192
+      width: 64
+      height: 64
+    spriteID: de0a164532733b24a9447af446a3c7f1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_153
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 2708ceb66149705418ded809ba8dd5f7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_154
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 128
+      width: 64
+      height: 64
+    spriteID: ec63132dfcc61a04ea3747237eba2d06
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_155
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 3fcad8df9e04dfd4685f4fe20ce3c26f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_156
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 2cf52ea1e23b21446bfaaf1fea5bf54b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_157
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 3bfb972ff72bd2143b1a9028d8c23820
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_158
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 5f1a809da4adeac4d9799600886af2fa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_159
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 128
+      width: 64
+      height: 64
+    spriteID: a3e08fda8f276084a96ad84177b578a7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_160
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 86bc11edc114ef046a00eb6d886c1e04
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_161
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 50dc2500bc30ea0468b16f8a82857800
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_162
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 902f54de82fd7104f8c908fc7aafe79c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_163
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 128
+      width: 64
+      height: 64
+    spriteID: dc9da5b0ed5500341a2503e99e3c4414
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_164
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 93bbaa3e253fdac40a708ea334dc7bb8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_165
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 7ed1e18ea71ab214985890ef888c70c8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_166
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 128
+      width: 64
+      height: 64
+    spriteID: ddd1af2e67d73e74c98024ba338d81c0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_167
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 128
+      width: 64
+      height: 64
+    spriteID: 07f182d1d6499b8429451c87d163502d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_168
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 128
+      width: 64
+      height: 64
+    spriteID: d8939f91d14a19448bd5072397f7b2d0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_169
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 128
+      width: 64
+      height: 64
+    spriteID: b6425dc5f54335e4599d1e11eba5fb60
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_170
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 7c61f7c1de9077f44ae4962df5b8b578
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_171
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 95f406c2c77744d4590aa63554e02f2a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_172
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 18fc2ace16fdf76488b1245194e5adf7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_173
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 64
+      height: 64
+    spriteID: bbc4d11a19f062a44844264e9e87d467
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_174
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 2cf3810ee42f7ac4e80c12edf6d0b09f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_175
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 64
+      width: 64
+      height: 64
+    spriteID: bf160f5f4b0f52845803b7e35ebbf690
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_176
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 64
+      width: 64
+      height: 64
+    spriteID: f15ba65f4fc8c2e45ae8425c9102bedd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_177
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 6f089ebdcc7ebc04ba47f17688076bd0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_178
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 64
+      width: 64
+      height: 64
+    spriteID: ca44b92afd252054ab7e4438cd2e97d6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_179
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 64
+      width: 64
+      height: 64
+    spriteID: ecf130645228c674cbf8d55439e01e2a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_180
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 64
+      width: 64
+      height: 64
+    spriteID: ba0e54116b6cf9446b57cd911c916231
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_181
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 83bcfa1fe8acf8d499c349853a200421
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_182
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 64
+      width: 64
+      height: 64
+    spriteID: c25a4f55cb710ff4b8cf90eff4be9321
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_183
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 20f822413c0d90a4ebd71dd1f8ecb490
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_184
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 2b2a589eeb934de488ead23feb662e7a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_185
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 64
+      width: 64
+      height: 64
+    spriteID: c902010a558ca0f4987ea7a5410145d3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_186
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 64
+      width: 64
+      height: 64
+    spriteID: 51d9163f2b14882498c0d1e6f01b8fdb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_187
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 3c1eea738141c9847add5e666fb0aa0b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_188
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 0252579be6e28534baddef74af1482ef
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_189
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 0620119e4abbc1e4eb9d15edafbeb208
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_190
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 4dcd3d4084c51934098d93a51d660a21
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_191
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 95c9fe34f6a92d04681301d154c9a484
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_192
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 999bbba96e043344e982796ee7602090
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_193
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 1cc55aed248dcf44ab55fd680c899423
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_194
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 16c2678e5fbbac549a957d0bf6d784e3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_195
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 0
+      width: 64
+      height: 64
+    spriteID: eadd42f93884457448680d989240be30
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_196
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 0
+      width: 64
+      height: 64
+    spriteID: c947ab2233682f24ca4a72a5135ac9db
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_197
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 0ea757e1a2339754d81570b4836ebe56
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_198
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 26f42b64d922bf64596bdf63e800238e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_199
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 336c0d323ff2b8e4c9a4d3a1a72b89f7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_200
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 0
+      width: 64
+      height: 64
+    spriteID: a10acbdd6770d374183bd8e78193a41e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_201
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 896
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 8282df8b55ede7741af5fdcd2e511394
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_202
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 11df97e77a1ed1247b1451d3481054c8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: MapPack_tilesheet2_203
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1024
+      y: 0
+      width: 64
+      height: 64
+    spriteID: c3fa07f37591b5a46a0e9b3559c5cb9d
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {instanceID: 0}

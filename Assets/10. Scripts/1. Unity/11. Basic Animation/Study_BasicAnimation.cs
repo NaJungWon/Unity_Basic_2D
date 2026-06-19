@@ -25,62 +25,64 @@ namespace Study_BasicAnimation
 
         private void Update()
         {
-            /* SetBool 사용
-            bool isWalk = SimpleInput.GetKey(Key.RightArrow) || SimpleInput.GetKey(Key.LeftArrow);
-            bool isRun = SimpleInput.GetKey(Key.LeftShift);
+            // SetBool 사용
+            // bool isWalk = SimpleInput.GetKey(Key.RightArrow) || SimpleInput.GetKey(Key.LeftArrow);
+            // bool isRun = SimpleInput.GetKey(Key.LeftShift);
 
-            animator.SetBool("IsWalk", isWalk);
-            animator.SetBool("IsRun", isRun);
-            */
+            // animator.SetBool("IsWalk", isWalk);
+            // animator.SetBool("IsRun", isRun);
+
             StudyAnimator();
         }
 
-        // Animator의 주요 필드와 메서드
+
+        // # Animator의 주요 필드와 메서드
+
         // .SetBool(), .GetBool()
         // : bool 파라미터를 제어합니다. 색인(id or string)과 bool값을 전달합니다.
 
         // .SetFloat(), .GetFloat()
-        // : float 파라미터를 제어합니다. 색인(id or string)과 bool값을 전달합니다.
+        // : float 파라미터를 제어합니다. 색인(id or string)과 float값을 전달합니다.
 
         // .SetInteger(), .GetInteger()
-        // : int 파라미터를 제어합니다.
+        // : int 파라미터를 제어합니다. 색인(id or string)과 float값을 전달합니다.
 
         // .SetTrigger(), .ResetTrigger()
         // : 트리거 파라미터를 발생시킵니다. 색인(id or string)만을 사용합니다.
-        //  ResetTrigger()는 해당 트리거의 입력 상태를 원상 복귀 시킵니다. (없는 상태로)
+        //  ResetTrigger()는 해당 트리거의 입력 상태를 원상복귀 시킵니다. (없는 상태로)
 
         // .GetCurrentAnimatorStateInfo(0) : 현재 재생중인 State 정보를 가져옵니다.
 
+
         public float speed = 1.0f;
+
 
         private void StudyAnimator()
         {
-            float moveDirection = SimpleInput.GetAxishHorizontalRaw();
+            float moveDirection = SimpleInput.GetAxisHorizontalRaw();
             // moveDirection와 speed을 이용해서 애니메이터에게 일을 시켜봅시다
 
             // 캐릭터의 방향 전환과 애니메이션적용값을 같이 구현합니다.
-            // 이동입력이 있는지 판별. 0보다 크다면 이동 입력이 있는 것
+            // 이동입력이 있는지 판별. 0보다 크다면 이동 입력이 있는것
             float absMoveDirection = Mathf.Abs(moveDirection);
             animator.SetFloat("Movement", absMoveDirection);
 
-            /* 이렇게도 할 수 있지만
-            if(absMoveDirection > 0)
-            {
-                Vector3 currentScale = transform.localScale;
-                currentScale.x = Mathf.Abs(currentScale.x) * moveDirection;
-                transform.localScale = currentScale;
-            }
-            */
+            // 요렇게도 할 수 있지만
+            //if(absMoveDirection > 0)
+            //{
+            //    Vector3 currentScale = transform.localScale;
+            //    currentScale.x = Mathf.Abs(currentScale.x) * moveDirection;
+            //    transform.localScale = currentScale;
+            //}
 
-            //아래처럼 표현하는걸 추천 드립니다.
+            // 아래처럼 표현하는걸 추천드립니다
             if (absMoveDirection > 0) spriteRenderer.flipX = (moveDirection < 0.0f);
 
             // 달리기까지 포함한 이동 연산
             bool isRun = SimpleInput.GetKey(Key.LeftShift);
             animator.SetBool("IsRun", isRun);
-
             float applySpeed = speed * (isRun ? 2.5f : 1.0f);
-
+            
             transform.Translate
                 (Vector3.right * moveDirection * applySpeed * Time.deltaTime);
         }

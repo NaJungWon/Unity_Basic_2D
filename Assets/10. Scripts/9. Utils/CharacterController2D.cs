@@ -2,48 +2,50 @@ using Study.Utilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Study_Utilities
+
+namespace Study.Utilities
 {
     // RequireComponent?
     // : 아래의 선언된 클래스가 동작하려면 typeof(컴포넌트)의
-    // 컴포넌트가 필요하다고 강제하는 키워드 입니다.
-    // GameObject에 Attach하게 되면 필요한 컴포넌트를
-    // 자동으로 생성합니다.
+    //  컴포넌트가 필요하다고 강제하는 키워드 입니다.
+    //  GameObject에 Attach하게 되면 필요한 컴포넌트를
+    //  자동으로 생성합니다
     [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterController2D : MonoBehaviour
     {
         private const float GROUND_STICK_SPEED = -2.0f;
 
         [Header("Settings")]
-        public float     speed               = 2.0f;
-        public float     gravity             = -9.81f;
-        public float     jumpPower           = 8.0f;
-        public int       maxJumpCount        = 2;
-        public float     groundCheckDistance = 0.5f;
-        public float     skinWidth           = 0.02f;
-        public LayerMask collisionLayer;
+        public float        speed               = 2.0f;
+        public float        gravity             = -9.81f; 
+        public float        jumpPower           = 8.0f; 
+        public int          maxJumpCount        = 2;
+        public float        groundCheckDistance = 0.5f;  
+        public float        skinWidth           = 0.02f;
+        public LayerMask    collisionLayer;
 
         private Rigidbody2D rBody;
         private Collider2D  col;
+        
+        private int     jumpCount           = 0;
+        private bool    jumpRequested       = false;
+        private Vector3 externalDelta       = Vector3.zero;   
+        private float   moveInput           = 0.0f;
 
-        // 내부 상태 변수들
-        private int     jumpCount        = 0;
-        private bool    jumpRequested    = false;
-        private Vector3 externalDelta    = Vector3.zero;
-        private float   moveInput        = 0.0f;
-
-        // 아래의 두개는 외부에서 조회가 가능해야 합니다.
+        // 아래의 두개는 외부에서 조회가 가능해야 합니다. 
         // 읽기 전용으로 바꿔줍니다
         public float VerticalVelocity { get; private set; } = 0.0f;
         public bool IsGrounded { get; private set; } = false;
 
+
         #region Unity Methods
+
         private void Awake()
         {
             rBody = GetComponent<Rigidbody2D>();
-            col = GetComponent<Collider2D>();
-
             rBody.bodyType = RigidbodyType2D.Kinematic;
+
+            col = GetComponent<Collider2D>();
         }
 
         private void FixedUpdate()
@@ -99,21 +101,20 @@ namespace Study_Utilities
             {
                 VerticalVelocity += GROUND_STICK_SPEED;
                 jumpCount = 0;
+                return;
             }
-            else // 공중에 있는 상태
-            {
-                VerticalVelocity += gravity * Time.fixedDeltaTime;
-            }
+
+            VerticalVelocity += gravity * Time.fixedDeltaTime;
         }
 
         private float ResolveAxisMovement(float move, Vector3 axis)
         {
             if (move == 0.0f) return 0.0f;
 
-            Vector3 dir = move > 0.0f ? axis : -axis;
+            Vector3 dir = (move > 0.0f ? axis : -axis);
             float distance = Mathf.Abs(move);
-
             Bounds box = GetCastBox();
+            
             RaycastHit2D hit = Physics2D.BoxCast(
                 box.center, box.size, 0.0f, dir, distance, collisionLayer);
 
@@ -139,13 +140,13 @@ namespace Study_Utilities
         private void ApplyJump()
         {
             if (jumpRequested == false) return;
-            jumpRequested = false; //우편함을 비웁니다.
+            jumpRequested = false;
 
             if (jumpCount >= maxJumpCount) return;
 
             VerticalVelocity = jumpPower;
             jumpCount++;
-            IsGrounded = false; // 바닥에서 떨어졌음을 설정합니다.
+            IsGrounded = false; 
         }
 
         private bool CheckGrounded()
@@ -153,8 +154,8 @@ namespace Study_Utilities
             Bounds box = GetCastBox();
             RaycastHit2D hit = Physics2D.BoxCast(
                 box.center, box.size, 0.0f, Vector2.down, groundCheckDistance, collisionLayer);
-            bool result = (hit.collider != null);
 
+            bool result = (hit.collider != null);
             return result;
         }
 

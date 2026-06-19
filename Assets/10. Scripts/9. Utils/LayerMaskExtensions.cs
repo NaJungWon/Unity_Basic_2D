@@ -6,12 +6,14 @@ public static class LayerMaskExtensions
     /// <summary>
     /// LayerMask에 특정 레이어(int)가 포함되어 있는지 확인합니다.
     /// </summary>
-    public static bool Contains(this LayerMask mask, int layer) => (mask.value & (1 << layer)) != 0;
+    public static bool Contains(this LayerMask mask, int layer) 
+        => (mask.value & (1 << layer)) != 0;
 
     /// <summary>
     /// LayerMask에 특정 GameObject의 레이어가 포함되어 있는지 확인합니다.
     /// </summary>
-    public static bool Contains(this LayerMask mask, GameObject gameObject) => mask.Contains(gameObject.layer);
+    public static bool Contains(this LayerMask mask, GameObject gameObject) 
+        => mask.Contains(gameObject.layer);
 
     /// <summary>
     /// 기존 마스크에 새로운 레이어를 추가한 복사본을 반환합니다.

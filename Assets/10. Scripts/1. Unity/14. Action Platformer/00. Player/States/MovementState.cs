@@ -11,7 +11,12 @@ namespace Study_ActionPlatformer
 
         public override void UpdateState(AnimatorStateInfo stateInfo)
         {
+
+
+
             Owner.HandleMovement();
         }
     }
+
 }
+
