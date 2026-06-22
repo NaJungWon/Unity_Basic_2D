@@ -270,6 +270,19 @@ namespace Study_ActionPlatformer
             else if (yDistance > 0) return 1;
             else return -1; //(yDistance < 0)
         }
+
+        public void Dead()
+        {
+            //Enemy가 죽게되면 죽음 이펙트를 생성하고, 스스로를 삭제합니다.
+
+            GameObject effect = Instantiate(deadEffect, transform.position + deadEffectOffset, Quaternion.identity);
+
+            // 이펙트는 일정시간이 지난뒤에 자동으로 삭제 됩니다.
+            // 여기서는 Destroy(삭제할 대상, 지연시간); 함수를 사용합니다.
+            Destroy(effect, deadEffectLifeTime); // effect를 deadEffectLifeTime시간 이후에 삭제한다.
+
+            Destroy(gameObject);
+        }
     }
 
 

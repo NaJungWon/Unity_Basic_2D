@@ -20,7 +20,11 @@ ScriptedImporter:
   _useParallax: 1
   _scaleEntities: 1
   _intGridValues:
+  - _key: CollisionLayer_1
+    _asset: {fileID: 11400000, guid: 75289d4ffddac1944b948b5f0b891bec, type: 2}
   - _key: IntGrid_1
+    _asset: {instanceID: 0}
+  - _key: IntGrid_2
     _asset: {instanceID: 0}
   _entities: []
   _enumGenerate: 0
@@ -28,5 +32,9 @@ ScriptedImporter:
   _enumNamespace: 
   _useLayerCustomSortingOrders: 0
   _layerCustomSortingOrders:
+  - _ldtkLayerName: CollisionLayer
+    _ldtkLayerOrder: 0
   - _ldtkLayerName: IntGrid
     _ldtkLayerOrder: 0
+  - _ldtkLayerName: BackGround
+    _ldtkLayerOrder: -1

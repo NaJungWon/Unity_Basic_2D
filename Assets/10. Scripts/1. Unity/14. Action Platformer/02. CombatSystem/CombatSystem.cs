@@ -52,17 +52,50 @@ namespace Study_ActionPlatformer
             switch(@event.EventType)
             {
                 case CombatEventType.DamageEvent:
-                    for(int i = 0; i < observerList.Count; ++i)
-                        observerList[i].OnDamageTaken(sender, receiver, @event);
+                    HandleDamageEvent(sender, receiver, @event);
                     break;
                 case CombatEventType.HealEvent:
-                    for (int i = 0; i < observerList.Count; ++i)
-                        observerList[i].OnHealTaken(sender, receiver, @event);
+                    HandleHealEvent(sender, receiver, @event);
                     break;
             }
         }
 
+        public void HandleDamageEvent(CombatEntity sender, CombatEntity receiver, CombatEvent @event)
+        {
+            receiver.TakeDamage(@event.Amount);
 
+            for (int i = 0; i < observerList.Count; i++)
+                observerList[i].OnDamageTaken(sender, receiver, @event);
+        }
+
+        public void HandleHealEvent(CombatEntity sender, CombatEntity receiver, CombatEvent @event)
+        {
+            receiver.TakeHeal(@event.Amount);
+
+            for (int i = 0; i < observerList.Count; i++)
+                observerList[i].OnDamageTaken(sender, receiver, @event);
+        }
+
+        //Dictionary<Collider2D, Enemy> 사용하셔도 무방합니다.
+        // : 저는 주로 Collider를 Key값으로 사용하는데 HurtBox때문에 변경한겁니다.
+        private Dictionary<Collider2D, HurtBox> EntityDic { get; set; } = new();
+
+        public void AddHurtBox(Collider2D collider2D, HurtBox hurtBox)
+        {
+            EntityDic.TryAdd(collider2D, hurtBox);
+        }
+
+        public void RemoveHurtBox(Collider2D collider2D)
+        {
+            if (EntityDic.ContainsKey(collider2D) == false) return;
+            EntityDic.Remove(collider2D);
+        }
+
+        public HurtBox GetHurtBoxOrNull(Collider2D collider2D)
+        {
+            EntityDic.TryGetValue(collider2D, out HurtBox reval);
+            return reval;
+        }
     }
 
 }

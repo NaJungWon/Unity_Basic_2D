@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using System.Collections.Generic;
-using System.Linq;
+using Unity.Android.Types;
+
+//using System.Linq;
 using UnityEngine;
 
 namespace Study_ActionPlatformer
@@ -47,18 +49,20 @@ namespace Study_ActionPlatformer
         private void OnTriggerEnter2D(Collider2D collision)
         {
             // HurtBox가 없을경우 종료한다. (Physics Layer 설정으로 아예 안들어오게 좋음)
-            if (collision.TryGetComponent<HurtBox>(out HurtBox other) == false) return;
-            
+            //if (collision.TryGetComponent<HurtBox>(out HurtBox other) == false) return;
+
+            HurtBox hurtBox = CombatSystem.Instance.GetHurtBoxOrNull(collision);
+            if (hurtBox == null) return;
             // 현재 HashSet에 해당 HurtBox가 존재할 경우 종료한다.
-            if (checkList.Contains(other)) return;
+            if (checkList.Contains(hurtBox)) return;
 
             // 중복 체크 방지를 위해 HashSet에 해당 HurtBox를 추가한다
-            checkList.Add(other);
+            checkList.Add(hurtBox);
 
             // 데미지 처리하는 로직.
             // 미리 준비해놓고
             CombatEntity sender = Owner;
-            CombatEntity receiver = other.Owner;
+            CombatEntity receiver = hurtBox.Owner;
             int damage = AttackInfo.RollDamage();
 
             // 담아주고
