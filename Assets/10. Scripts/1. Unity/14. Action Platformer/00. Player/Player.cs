@@ -18,7 +18,6 @@ namespace Study_ActionPlatformer
     {
         public static Player LocalPlayer { get; set; }
 
-
         public override BaseStat BaseStat => Stat;
         
         private PlayerStat Stat { get; set; }

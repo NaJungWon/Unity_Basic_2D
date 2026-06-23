@@ -1,8 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
-using Unity.Android.Types;
-
-//using System.Linq;
+using System.Linq;
 using UnityEngine;
 
 namespace Study_ActionPlatformer
@@ -48,11 +46,13 @@ namespace Study_ActionPlatformer
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            // 아래는 Legacy Code
             // HurtBox가 없을경우 종료한다. (Physics Layer 설정으로 아예 안들어오게 좋음)
             //if (collision.TryGetComponent<HurtBox>(out HurtBox other) == false) return;
-
+            
             HurtBox hurtBox = CombatSystem.Instance.GetHurtBoxOrNull(collision);
             if (hurtBox == null) return;
+            
             // 현재 HashSet에 해당 HurtBox가 존재할 경우 종료한다.
             if (checkList.Contains(hurtBox)) return;
 

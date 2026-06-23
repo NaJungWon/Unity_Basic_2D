@@ -28,10 +28,7 @@ namespace Study_ActionPlatformer
 
         
 
-        // 변동될 가능성이 높은것 같은디 허허
-        [SerializeField] private GameObject deadEffect;
-        [SerializeField] private Vector3 deadEffectOffset;
-        [SerializeField] private float deadEffectLifeTime = 0.5f;
+
 
         [field: SerializeField] public Transform Target;
 
@@ -216,11 +213,6 @@ namespace Study_ActionPlatformer
             }
         }
 
-        private IEnumerator DeadStateCoroutine()
-        {
-            yield return null;
-        }
-
         protected void Move(Vector3 goalPosition)
         {
             Animator.SetBool(IS_MOVE, true);
@@ -250,8 +242,6 @@ namespace Study_ActionPlatformer
             
         }
 
-        
-
         // 내 Transform과 Target의 Transform의 y값을 비교하여
         // 같은 층에 있는지를 조회하는 함수.
         // a가 b보다 낮은 층에 있으면 -1을
@@ -271,11 +261,17 @@ namespace Study_ActionPlatformer
             else return -1; //(yDistance < 0)
         }
 
+
+        // 변동될 가능성이 높은것 같은디 허허
+        [SerializeField] private GameObject deadEffect;
+        [SerializeField] private Vector3 deadEffectOffset;
+        [SerializeField] private float deadEffectLifeTime = 0.5f;
+
         public void Dead()
         {
-            //Enemy가 죽게되면 죽음 이펙트를 생성하고, 스스로를 삭제합니다.
-
-            GameObject effect = Instantiate(deadEffect, transform.position + deadEffectOffset, Quaternion.identity);
+            // Enemy가 죽게 되면 죽음 이펙트를 생성하고, 스스로를 삭제합니다.
+            GameObject effect = Instantiate(deadEffect, 
+                transform.position + deadEffectOffset, Quaternion.identity);
 
             // 이펙트는 일정시간이 지난뒤에 자동으로 삭제 됩니다.
             // 여기서는 Destroy(삭제할 대상, 지연시간); 함수를 사용합니다.

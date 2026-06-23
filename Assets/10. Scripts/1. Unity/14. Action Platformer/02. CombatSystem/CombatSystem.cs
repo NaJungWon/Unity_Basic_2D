@@ -1,7 +1,8 @@
-using UnityEngine;
-using System.Collections.Generic;
-using Study.Utilities;
 using Jay;
+using Study.Utilities;
+using System.Collections.Generic;
+using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Study_ActionPlatformer
 {
@@ -31,7 +32,6 @@ namespace Study_ActionPlatformer
             observerList.Remove(observer);
         }
 
-
         // @ : event라고하는 키워드 회피용 접두사 입니다. 추천받아서 내가쓰는거임.
         public void To(CombatEntity sender, CombatEntity receiver, CombatEvent @event)
         {
@@ -49,7 +49,7 @@ namespace Study_ActionPlatformer
             Debug.Log($"{sender.name}이 {receiver.name}에게 {@event.EventType.ToString()}" +
                 $", {@event.Amount}을 전달!");
 
-            switch(@event.EventType)
+            switch (@event.EventType)
             {
                 case CombatEventType.DamageEvent:
                     HandleDamageEvent(sender, receiver, @event);
@@ -60,40 +60,38 @@ namespace Study_ActionPlatformer
             }
         }
 
-        public void HandleDamageEvent(CombatEntity sender, CombatEntity receiver, CombatEvent @event)
+        private void HandleDamageEvent(CombatEntity sender, CombatEntity receiver, CombatEvent @event)
         {
             receiver.TakeDamage(@event.Amount);
 
-            for (int i = 0; i < observerList.Count; i++)
+            for (int i = 0; i < observerList.Count; ++i)
                 observerList[i].OnDamageTaken(sender, receiver, @event);
         }
 
-        public void HandleHealEvent(CombatEntity sender, CombatEntity receiver, CombatEvent @event)
+        private void HandleHealEvent(CombatEntity sender, CombatEntity receiver, CombatEvent @event)
         {
-            receiver.TakeHeal(@event.Amount);
-
-            for (int i = 0; i < observerList.Count; i++)
-                observerList[i].OnDamageTaken(sender, receiver, @event);
+            for (int i = 0; i < observerList.Count; ++i)
+                observerList[i].OnHealTaken(sender, receiver, @event);
         }
 
-        //Dictionary<Collider2D, Enemy> 사용하셔도 무방합니다.
+        // Dictionary<Collider2D, CombatEntity> 사용하셔도 무방합니다.
         // : 저는 주로 Collider를 Key값으로 사용하는데 HurtBox때문에 변경한겁니다.
-        private Dictionary<Collider2D, HurtBox> EntityDic { get; set; } = new();
+        private Dictionary<Collider2D, HurtBox> HurtBoxDic { get; set; } = new();
 
-        public void AddHurtBox(Collider2D collider2D, HurtBox hurtBox)
+        public void AddHurtBox(Collider2D collder, HurtBox hurtBox)
         {
-            EntityDic.TryAdd(collider2D, hurtBox);
+            HurtBoxDic.TryAdd(collder, hurtBox);
         }
 
-        public void RemoveHurtBox(Collider2D collider2D)
+        public void RemoveHurtBox(Collider2D collder)
         {
-            if (EntityDic.ContainsKey(collider2D) == false) return;
-            EntityDic.Remove(collider2D);
+            if (HurtBoxDic.ContainsKey(collder) == false) return;
+            HurtBoxDic.Remove(collder);
         }
 
-        public HurtBox GetHurtBoxOrNull(Collider2D collider2D)
+        public HurtBox GetHurtBoxOrNull(Collider2D collder)
         {
-            EntityDic.TryGetValue(collider2D, out HurtBox reval);
+            HurtBoxDic.TryGetValue(collder, out HurtBox reval);
             return reval;
         }
     }
