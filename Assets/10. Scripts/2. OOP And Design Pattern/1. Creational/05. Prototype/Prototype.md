@@ -63,7 +63,7 @@ public class Enemy
         // : 매개변수를 참고하여 해당 개체의 
         // 내용을 복사하여 추가 후, 반환합니다.
         
-        // 아래처럼 해도 상관없음
+        // 아래처럼 해도 상관없음 (깊은 복사)
         
         List<string> newSkills
             = new List<string>();
