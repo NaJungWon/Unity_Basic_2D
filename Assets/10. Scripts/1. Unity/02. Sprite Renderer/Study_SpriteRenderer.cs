@@ -46,7 +46,7 @@ namespace Study.Sprite_Renderer
 
         public Color colorA;
         public Color colorB;
-        
+
         private Color startColor;   // 시작 컬러 값
         private Color goalColor;    // 목표 컬러 값
 
