@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Study.Utilities;
 using UnityEngine.InputSystem;
 
 #if UNITY_EDITOR
@@ -51,8 +52,84 @@ namespace Study.MiniDefence
         private TileKind[,] kinds;
         private SpriteRenderer[,] renderers;
         private MapData mapData;
-        
+        private SquareGrid grid;
 
+        # region Painting
+
+        private void Update()
+        {
+            // 그리드가 생성되지 않았다면 페인팅 기능을 이용하지 못하게 한다.
+            if (grid == null) return;
+            bool left = SimpleInput.GetMouseButton(SimpleInput.MouseButton.Left);
+            bool right = SimpleInput.GetMouseButton(SimpleInput.MouseButton.Right);
+
+            if (left == false && right == false) return;
+
+            // 스크린 좌표 가지고 와서
+            Vector2 screen = SimpleInput.GetMousePosition();
+            // 씬의 월드 좌표로 변환
+            Vector3 world = paintCamera.ScreenToWorldPoint(new Vector3(screen.x, screen.y, 0));
+            //Grid좌표로 변환
+            Vector2Int coord = grid.WorldToCell(world);
+            
+            // 올바른  coord좌표를 얻었다면
+            if (grid.InBounds(coord))
+            {
+                Paint(coord, left? paintKind : TileKind.Buildable);
+                SyncMapData();
+            }
+        }
+
+        public void Paint(Vector2Int coord, TileKind kind)
+        {
+            // 이 함수는 시작할때부터 무조건 유효한 값을 가지고 시작합니다.
+            // 따라서 grid.InBounds를 검사할 필요가 없다.
+            // 넣고싶으면 넣으셔도 무방
+            // if (grid.InBounds(coord) == false) return;
+
+            Tile tile = grid.GetTileOrNull(coord);
+            // 해당 타일의 kind가 매개변수 kind와 동일하다면 return;
+            if (tile.Kind == kind) return;
+            
+            // 스폰/목표 타일은 맵에 하나만 존재하기 때문에
+            // 색칠 변경이 일어날 경우 이전에 있었던 타일을 BuildAble로 바꿔준다
+            if (kind == TileKind.Spawn)
+            {
+                // 현재 spawnTile의 종류가 TileKind.Spawn인지 검사하고
+                if(IsKindAt(spawnTile, TileKind.Spawn))
+                    //맞다면 바꿔준다
+                    ApplyKind(grid.GetTileOrNull(spawnTile), TileKind.Buildable);
+                spawnTile = coord;
+            }
+            else if (kind == TileKind.Goal)
+            {
+                // 현재 spawnTile의 종류가 TileKind.Spawn인지 ㅓㄱㅁ사하고
+                if(IsKindAt(goalTile, TileKind.Goal))
+                    //맞다면 바꿔준다
+                    ApplyKind(grid.GetTileOrNull(goalTile), TileKind.Buildable);
+                spawnTile = coord;
+            }
+            
+            ApplyKind(tile, kind);
+        }
+        
+        // 한 tile의 종류와 색을 결정한다.
+        private void ApplyKind(Tile tile, TileKind kind)
+        {
+            tile.Kind = kind;
+            renderers[tile.Coord.x, tile.Coord.y].color = ColorOf(tile.Kind);
+        }
+
+        private bool IsKindAt(Vector2Int coord, TileKind kind)
+        {
+            if(grid.InBounds(coord) == false) return false;
+            return grid.GetTileOrNull(coord) != null;
+        }
+        
+        #endregion
+        
+        # region Private Method
+        
         private Vector3 CellToCenterLocal(Vector2Int c)
         {
             // 셀 중심좌표 위치 보정
@@ -75,11 +152,88 @@ namespace Study.MiniDefence
             };
         }
         
+        TileKind KindOf(Vector2Int coord)
+        {
+            if (coord == spawnTile) return TileKind.Spawn;
+            else if (coord == goalTile) return TileKind.Goal;
+            return TileKind.Buildable;
+        }
+        
+        # endregion
+        
         # region MapData Method
-
+        // WayPoint를 생성하는게 중요합니다
+        
+        //현재 그리드에서 "정보만" 뽑아서 루트의 MapData에 기록한다.
         private void SyncMapData()
         {
+            mapData.ImportFrom(grid, null);
+        }
+
+        private List<Vector3> BuildRouteLocal()
+        {
+            Vector2Int spawn = spawnTile;
+            Vector2Int goal = goalTile;
+            HashSet<Vector3> visitedPathTiles = new HashSet<Vector3>();
             
+            List<Vector3> routePoints = new List<Vector3>();
+            
+            // 아래부터 본로직
+            
+            // 검색 우선순위 순서대로 놓는다. 반대방향의 경우는 (i+2) % 4 로 구현
+            Vector2Int[] dirs = new[] 
+                { Vector2Int.right, Vector2Int.up, Vector2Int.left, Vector2Int.down };
+            
+            // usedRoad[x,y,dir] : 3차원 배열이고, 의미는 (x,y)칸에서 dir 방향으로
+            //                     길을 지나갔는가? 저장 용도
+            bool[,,] usedRoad = new bool[grid.Width, grid.Height, dirs.Length];
+            Vector2Int current = spawn; // 탐색 시작 인덱스를 지정해준다
+            
+            // 매번마다 Painting을 해서 방어코드가 하나 있어야 합니다(while 탈출 조건)
+            // PS : 무한 루프 방지
+            int guard = width * height * dirs.Length;
+            
+            while (true)
+            {
+                guard--;
+                if (guard < 0) break;
+                
+                // --- 타일 검사 로직 ---
+                int chosen = -1; // 조건 검사에 의해 선택된 숫자
+                for (int i = 0; i < dirs.Length; i++) //4방향을 순서대로 검색을 해봅니다.
+                {
+                    // 이번에 조사해볼 타일의 인덱스를 고른다
+                    Vector2Int node = current + dirs[i]; 
+                    // 맵의 범위 밖이면 Pass
+                    if (grid.InBounds(node) == false) continue;
+                    // Path 타입이 아니면 Pass
+                    if (grid.GetTileOrNull(node).Kind != TileKind.Path) continue;
+                    // 동일한 위치좌표에서 해당 방향으로 지나갔다면
+                    if (usedRoad[current.x, current.y, i]) continue;
+                    
+                    chosen = i;
+                    break;
+                }
+                
+                if (chosen < 0) break; //더 갈 길이 없으니 while문을 탈출
+                
+                // --- 경로 처리 로직 ---
+                
+                //검사에 의해 선택된 방향을 좌표로 바꿔준다.
+                Vector2Int next = current + dirs[chosen];
+                
+                // 양쪽 모두 "지나간 길"로 표시한다.
+                usedRoad[current.x, current.y, chosen] = true;
+                usedRoad[next.x, next.y, (chosen + 2) % dirs.Length] = true;
+
+                // WayPoint를 남긴다
+                routePoints.Add(grid.CellToWorld(next));
+                current = next;
+            }
+
+            
+            
+            return routePoints;
         }
         
         # endregion
@@ -94,7 +248,8 @@ namespace Study.MiniDefence
 
             kinds = new TileKind[width, height];
             renderers = new SpriteRenderer[width, height];
-            
+
+            // 칸마다 종류를 정하고 그림(타일 오브젝트)을 만든다.
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
@@ -103,11 +258,16 @@ namespace Study.MiniDefence
                     CreateTile(index, KindOf(index)); // 스폰, 목표타일이 설정되어 넘어간다
                 }
             }
-
+            
+            // 다 그린 뒤에 마지막으로 그리드를 완성(생성)한다.
+            grid = SquareGrid.FromKinds(mapRoot.transform.position, cellSize, kinds);
+            
+            // 루트에 맵 정보(MapData)를 붙이고, 완성된 그리드에서 정보를 옮긴다.
             mapData = mapRoot.AddComponent<MapData>();
             SyncMapData();
             
-
+            
+            //타일 자체를 만들지는 않음
             void CreateTile(Vector2Int coord, TileKind kind)
             {
                 GameObject go = new GameObject($"Tile_{coord.x}_{coord.y}");
@@ -120,13 +280,6 @@ namespace Study.MiniDefence
                 
                 kinds[coord.x, coord.y] = kind;
                 renderers[coord.x, coord.y] = sr;
-            }
-
-            TileKind KindOf(Vector2Int coord)
-            {
-                if (coord == spawnTile) return TileKind.Spawn;
-                else if (coord == goalTile) return TileKind.Goal;
-                return TileKind.Buildable;
             }
         }
 
